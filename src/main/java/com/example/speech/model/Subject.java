@@ -11,14 +11,11 @@ public class Subject {
  @Id
  @GeneratedValue(strategy = GenerationType.AUTO)
  private long id;
+
  @Column(name = "keyword")
  private String keyword;
 
- @OneToMany(mappedBy = "subject")
- private Set<SpeechSubject> speechSubjectSet = new HashSet<>();
-
  public Subject(){
-
  }
 
  public Subject(String keyword){
@@ -33,19 +30,11 @@ public class Subject {
   return id;
  }
 
- public String getAuthor() {
+ public String getKeyword() {
   return keyword;
  }
 
- public void setAuthor(String keyword) {
+ public void setKeyword(String keyword) {
   this.keyword = keyword;
- }
-
- public void setSpeechSubjectSet(Set<SpeechSubject> speechSubjectSet) {
-  this.speechSubjectSet = speechSubjectSet;
- }
-
- public Set<SpeechSubject> getSpeechSubjectSet() {
-  return speechSubjectSet;
  }
 }
